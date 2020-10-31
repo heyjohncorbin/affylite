@@ -1,17 +1,16 @@
 <?php
 /**
- * Plugin Name: Affylite
- * Plugin URI:  https://md-wv.com
- * Description: Add a simple affiliate disclaimer to the top of each post. Easy, lite, and no bloat. Under 5kb.
- * Version:     1.0
- * Author:      MDWV
- * Author URI:  https://heyjohncorbin.com
+ * Plugin Name: Affylite - Easy Affiliate Disclosure and Disclaimer
+ * Description: Add a simple affiliate disclosure and disclaimer to the top of each post. Easy, lite, and no bloat. Under 5kb.
+ * Version:     1.2
+ * Author:      Deep Creek Lake, Maryland Marketing
+ * Author URI:  https://md-wv.com
  * License:     GPLv2 or later.
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: affylite
 */
 
-// Admin page to set a custom affiliate disclaimer
+// Admin page to set a custom affiliate disclosure and disclaimer
 add_action( 'admin_menu', 'affylite_add_admin_menu' );
 add_action( 'admin_init', 'affylite_settings_init' );
 
@@ -25,7 +24,7 @@ add_action( 'admin_init', 'affylite_settings_init' );
 		register_setting( 'pluginPage', 'affylite_settings' );
 		add_settings_section(
 			'affylite_pluginPage_section', 
-			__( 'Add a simple affiliate disclaimer to the top of each post.', 'affylite' ), 
+			__( 'Add a simple affiliate disclosure and disclaimer to the top of each post.', 'affylite' ), 
 			'affylite_settings_section_callback', 
 			'pluginPage'
 		);
@@ -52,7 +51,7 @@ add_action( 'admin_init', 'affylite_settings_init' );
 	function affylite_options_page(  ) { 
 			?>
 			<form action='options.php' method='post'>
-				<h2>Affylite - Easy Affiliate Disclaimer</h2>
+				<h2>Affylite - Easy Affiliate Disclosure and Disclaimer</h2>
 				<?php
 				settings_fields( 'pluginPage' );
 				do_settings_sections( 'pluginPage' );
